@@ -13,77 +13,88 @@
 
 </head>
 <body>
-<header>
-    <!-- LOGO AND NAVIGATION AROUND WEBSITE -->
-    <a href="./index.html" class="logo">City</a>
-<nav>
-    <div class="top-nav">
-    <ul class="top-nav-links">
-        <li><button>Residents</button></li>
-        <li><button>Community</button></li>
-        <li><button>Business</button></li>
-        <li><button>Government</button></li>
-    </ul>
-    <button>search</button>
-</div>
-<div class="bottom-nav">
-    <ul class="bottom-nav-links">
-        <li><a href="/src/html/about-city.html">About City</a></li>
-        <li><a href="/src/html/get-involved.html">Get Involved</a></li>
-        <li><a href="/src/html/news.html">News</a></li>
-        <li><a href="/src/html/careers.html">Careers</a></li>
-        <li><a href="/src/html/contact-us.html">Contact Us</a></li>
-        <li><a href="/src/html/faq.html">Faq</a></li>
-    </ul>
-</div>
-</nav>
-</header>
+    <header class="header">
+    
+        <div class="header-container">
+    
+            <a href="./index.html" class="logo">City</a>
+    
+            <nav class="nav">
+                <ul class="nav-links top-links">
+                    <li><button class="nav-btn">Residents</button></li>
+                    <li><button class="nav-btn">Community</button></li>
+                    <li><button class="nav-btn">Business</button></li>
+                    <li><button class="nav-btn">Government</button></li>
+                </ul>
+    
+                <ul class="nav-links bottom-links">
+                    <li><a href="/src/html/about-city.html">About City</a></li>
+                    <li><a href="/src/html/get-involved.html">Get Involved</a></li>
+                    <li><a href="/src/html/news.html">News</a></li>
+                    <li><a href="/src/html/careers.html">Careers</a></li>
+                    <li><a href="/src/html/contact-us.html">Contact Us</a></li>
+                    <li><a href="/src/html/faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+    
+            <button class="search-btn">Search</button>
+    
+        </div>
+    
+    </header>
+    
 
-<main>
-    <!-- SLIDESHOW BACKGROUND -->
-<div>
-    <div>
-        <h1>Welcome to the City</h1>
-       <a href="">Get to know City</a>
-    </div>
-</div>
+    <main>
 
-<div>
-    <!-- add svg icons to each link -->
-<ul>
-    <li><a href="">Waste & Recycling Solutions</a></li>
-    <li><a href="">City Transit</a></li>
-    <li><a href="">Outdoor Facilities</a></li>
-    <li><a href="">Report an Issue</a></li>
-    <li><a href="">Building Permits</a></li>
-    <li><a href="">Service Requests & Bill Payments</a></li>
-</ul>
-</div>
-<div>
-    <h2>City Discovery Map</h2>
-    <p>Search for parks, recreational centres, cultural landmarks, and heritage sites, all marked clearly for easy navigation. Discover city gems and plan your next adventure with just a few clicks!</p>
-<a href="/src/html/map.html">Explore the map</a>
-</div>
-<div>
-    <h2>City News</h2>
-    <p>Stay informed about the latest happenings in the city, including upcoming events, community initiatives, and important announcements. Get the news that matters to you and your community.</p>
-<a href="/src/html/news.html">Visit our news page</a>
-</div>
-<div>
-    <h2>Stay connected —sign up for our newsletter.</h2>
-    <button>Subscribe to City news</button>
-</div>
-</main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to the City</h1>
+                <a href="#" class="btn-primary">Get to know City</a>
+            </div>
+        </section>
 
-<!-- when users reaches footer make an up arrow button to go back to the start of the page -->
-<footer>
-<div>
-    <a href="./index.html" class="logo">City</a>
-    <h2> Keep in touch!</h2>
-    <!-- add svg icons for social meadia -->
-     <button>Subscribe to City news</button>
-</div>
-</footer>
+        <section class="services">
+            <ul class="service-list">
+                <li><a href="#">Waste & Recycling Solutions</a></li>
+                <li><a href="#">City Transit</a></li>
+                <li><a href="#">Outdoor Facilities</a></li>
+                <li><a href="#">Report an Issue</a></li>
+                <li><a href="#">Building Permits</a></li>
+                <li><a href="#">Service Requests & Bill Payments</a></li>
+            </ul>
+        </section>
+
+        <section class="info-section">
+            <div class="info-card">
+                <h2>City Discovery Map</h2>
+                <p>Search for parks, recreational centres, cultural landmarks, and heritage sites, all marked clearly
+                    for easy navigation.</p>
+                <a href="/src/html/map.html" class="btn-secondary">Explore the map</a>
+            </div>
+
+            <div class="info-card">
+                <h2>City News</h2>
+                <p>Stay informed about the latest happenings in the city, including upcoming events and important
+                    announcements.</p>
+                <a href="/src/html/news.html" class="btn-secondary">Visit our news page</a>
+            </div>
+        </section>
+
+        <section class="newsletter">
+            <h2>Stay connected — sign up for our newsletter.</h2>
+            <button class="btn-primary">Subscribe to City News</button>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="./index.html" class="logo">City</a>
+            <h2>Keep in touch!</h2>
+            <button class="btn-secondary">Subscribe to City News</button>
+        </div>
+    </footer>
 </body>
+
 
 </html>
