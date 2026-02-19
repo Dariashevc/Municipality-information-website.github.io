@@ -1,100 +1,186 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>City</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=DM+Serif+Text&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Your CSS -->
     <link rel="stylesheet" href="/src/css/home-page.css">
 
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
 </head>
+
 <body>
+
+    <!-- ===== HEADER ===== -->
     <header class="header">
-    
         <div class="header-container">
-    
-            <a href="./index.html" class="logo">City</a>
-    
+            <a href="#" class="logo">City</a>
+
             <nav class="nav">
                 <ul class="nav-links top-links">
-                    <li><button class="nav-btn">Residents</button></li>
-                    <li><button class="nav-btn">Community</button></li>
-                    <li><button class="nav-btn">Business</button></li>
-                    <li><button class="nav-btn">Government</button></li>
+                    <li><button class="nav-btn" data-modal="residents">Residents</button></li>
+                    <li><button class="nav-btn" data-modal="community">Community</button></li>
+                    <li><button class="nav-btn" data-modal="business">Business</button></li>
+                    <li><button class="nav-btn" data-modal="government">Government</button></li>
                 </ul>
-    
+
                 <ul class="nav-links bottom-links">
-                    <li><a href="/src/html/about-city.html">About City</a></li>
-                    <li><a href="/src/html/get-involved.html">Get Involved</a></li>
-                    <li><a href="/src/html/news.html">News</a></li>
-                    <li><a href="/src/html/careers.html">Careers</a></li>
-                    <li><a href="/src/html/contact-us.html">Contact Us</a></li>
-                    <li><a href="/src/html/faq.html">FAQ</a></li>
+                    <li><a href="#">About City</a></li>
+                    <li><a href="#">News</a></li>
+                    <li><a href="#">Careers</a></li>
                 </ul>
             </nav>
-    
+
             <button class="search-btn">Search</button>
-    
         </div>
-    
     </header>
-    
 
-    <main>
-
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Welcome to the City</h1>
-                <a href="#" class="btn-primary">Get to know City</a>
+    <!-- ===== NAV MODALS ===== -->
+    <div class="nav-modal-container">
+        <div class="nav-modal" id="residents">
+            <div class="modal-left">
+                <h3>Residents</h3>
+                <p>Explore services, resources, and community events tailored for residents of City.</p>
             </div>
-        </section>
-
-        <section class="services">
-            <ul class="service-list">
-                <li><a href="#">Waste & Recycling Solutions</a></li>
-                <li><a href="#">City Transit</a></li>
-                <li><a href="#">Outdoor Facilities</a></li>
-                <li><a href="#">Report an Issue</a></li>
-                <li><a href="#">Building Permits</a></li>
-                <li><a href="#">Service Requests & Bill Payments</a></li>
-            </ul>
-        </section>
-
-        <section class="info-section">
-            <div class="info-card">
-                <h2>City Discovery Map</h2>
-                <p>Search for parks, recreational centres, cultural landmarks, and heritage sites, all marked clearly
-                    for easy navigation.</p>
-                <a href="/src/html/map.html" class="btn-secondary">Explore the map</a>
+            <div class="modal-right">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-calendar"></i> Events & Activities</a></li>
+                    <li><a href="#"><i class="fa-solid fa-map"></i> City Discovery Map</a></li>
+                    <li><a href="#"><i class="fa-solid fa-tree"></i> Parks & Recreation</a></li>
+                    <li><a href="#"><i class="fa-solid fa-leaf"></i> Sustainability</a></li>
+                </ul>
             </div>
-
-            <div class="info-card">
-                <h2>City News</h2>
-                <p>Stay informed about the latest happenings in the city, including upcoming events and important
-                    announcements.</p>
-                <a href="/src/html/news.html" class="btn-secondary">Visit our news page</a>
+        </div>
+        <div class="nav-modal" id="community">
+            <div class="modal-left">
+                <h3>Community</h3>
+                <p>Engage with local organizations, events, and volunteer opportunities.</p>
             </div>
-        </section>
+            <div class="modal-right">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-hands-helping"></i> Volunteer Opportunities</a></li>
+                    <li><a href="#"><i class="fa-solid fa-users"></i> Community Groups</a></li>
+                    <li><a href="#"><i class="fa-solid fa-calendar-check"></i> Upcoming Events</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-modal" id="business">
+            <div class="modal-left">
+                <h3>Business</h3>
+                <p>Resources and support for local businesses, entrepreneurs, and investors.</p>
+            </div>
+            <div class="modal-right">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-briefcase"></i> Business Resources</a></li>
+                    <li><a href="#"><i class="fa-solid fa-chart-line"></i> Economic Reports</a></li>
+                    <li><a href="#"><i class="fa-solid fa-building"></i> Development Opportunities</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-modal" id="government">
+            <div class="modal-left">
+                <h3>Government</h3>
+                <p>Information on city services, programs, and governance.</p>
+            </div>
+            <div class="modal-right">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-gavel"></i> Policies & Bylaws</a></li>
+                    <li><a href="#"><i class="fa-solid fa-file"></i> Reports & Documents</a></li>
+                    <li><a href="#"><i class="fa-solid fa-handshake"></i> Citizen Services</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-        <section class="newsletter">
-            <h2>Stay connected — sign up for our newsletter.</h2>
-            <button class="btn-primary">Subscribe to City News</button>
-        </section>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the City</h1>
+            <a href="#" class="btn-primary">Discover More</a>
+        </div>
+    </section>
 
-    </main>
+    <!-- ===== SERVICES ===== -->
+    <section class="services" data-aos="fade-up">
+        <ul class="service-list">
+            <li>Waste & Recycling</li>
+            <li>City Transit</li>
+            <li>Outdoor Facilities</li>
+            <li>Building Permits</li>
+        </ul>
+    </section>
 
+    <!-- ===== MAP ===== -->
+    <section class="city-map-section" data-aos="fade-up">
+        <div class="section-header">
+            <h2>City Discovery Map</h2>
+        </div>
+        <div id="map"></div>
+    </section>
+
+    <!-- ===== NEWS ===== -->
+    <section class="city-news-section" data-aos="fade-up">
+        <div class="section-header">
+            <h2>City News</h2>
+        </div>
+        <div class="news-grid">
+            <div class="news-card">
+                <h3>New Park Opening</h3>
+                <p>The city announces a new park for families to enjoy recreational activities.</p>
+            </div>
+            <div class="news-card">
+                <h3>Transit Updates</h3>
+                <p>New transit routes launching next month for smoother city commute.</p>
+            </div>
+            <div class="news-card">
+                <h3>Community Event</h3>
+                <p>Annual community festival will be held downtown this weekend.</p>
+            </div>
+            <div class="news-card">
+                <h3>Infrastructure Plan</h3>
+                <p>The city releases new plans to improve road safety and traffic flow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="footer-content">
-            <a href="./index.html" class="logo">City</a>
+        <div>
+            <a href="#" class="logo">City</a>
             <h2>Keep in touch!</h2>
-            <button class="btn-secondary">Subscribe to City News</button>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <button class="btn-primary">Subscribe to City News</button>
         </div>
     </footer>
-</body>
 
+    <!-- JS LIBRARIES -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Your JS -->
+    <script src="/src/js/home-page.js"></script>
+
+</body>
 
 </html>
