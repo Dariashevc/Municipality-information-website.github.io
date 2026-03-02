@@ -45,6 +45,9 @@
                     <li><a href="#">About City</a></li>
                     <li><a href="#">News</a></li>
                     <li><a href="#">Careers</a></li>
+                    <li><a href="#">Get involved</a></li>
+                    <li><a href="#">Faq</a></li>
+                  <li><a href="#">Contact us</a></li>
                 </ul>
             </nav>
 
@@ -109,32 +112,47 @@
         </div>
     </div>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to the City</h1>
-            <a href="#" class="btn-primary">Discover More</a>
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="hero-slider">
+        <div class="slide active">
+            <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=2000" alt="City skyline">
         </div>
-    </section>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2000" alt="Downtown city">
+        </div>
+        <div class="slide">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000"
+                alt="Modern city buildings">
+        </div>
+    </div>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="services" data-aos="fade-up">
-        <ul class="service-list">
-            <li>Waste & Recycling</li>
-            <li>City Transit</li>
-            <li>Outdoor Facilities</li>
-            <li>Building Permits</li>
-        </ul>
-    </section>
+    <div class="hero-content">
+        <h1>Welcome to the City</h1>
+        <a href="#" class="btn-primary">Discover More</a>
+    </div>
+</section>
+<!-- ===== CITY DISCOVERY SECTION ===== -->
+<section class="city-discovery-section" data-aos="fade-up">
+    <div class="discovery-container">
 
-    <!-- ===== MAP ===== -->
-    <section class="city-map-section" data-aos="fade-up">
-        <div class="section-header">
+        <div class="discovery-text">
             <h2>City Discovery Map</h2>
-        </div>
-        <div id="map"></div>
-    </section>
+            <p>
+                Search for parks, recreational centres, cultural landmarks, and heritage sites,
+                all marked clearly for easy navigation. Discover city gems and plan your next
+                adventure with just a few clicks!
+            </p>
 
+            <a href="map.html" class="btn-primary">Explore the Map</a>
+        </div>
+
+        <div class="discovery-image">
+            <img src="https://images.unsplash.com/photo-1502920917128-1aa500764b6c?q=80&w=2000" alt="City park">
+        </div>
+
+    </div>
+</section>
     <!-- ===== NEWS ===== -->
     <section class="city-news-section" data-aos="fade-up">
         <div class="section-header">
@@ -174,9 +192,7 @@
         </div>
     </footer>
 
-    <!-- JS LIBRARIES -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <!-- Your JS -->
     <script src="/src/js/home-page.js"></script>

@@ -20,14 +20,19 @@ document.addEventListener("click", () => {
     modals.forEach(modal => modal.classList.remove("active"));
 });
 
-// ===== LEAFLET MAP =====
-var map = L.map('map').setView([51.0447, -114.0719], 13);
+    // ===== HERO SLIDESHOW =====
+const slides = document.querySelectorAll(".slide");
+let currentSlide = 0;
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution:'&copy; OpenStreetMap contributors'
-}).addTo(map);
+function changeSlide() {
+    slides[currentSlide].classList.remove("active");
 
-L.marker([51.0447, -114.0719])
-    .addTo(map)
-    .bindPopup('<b>City Hall</b><br>Welcome to City!')
-    .openPopup();
+    currentSlide++;
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
+
+    slides[currentSlide].classList.add("active");
+}
+
+setInterval(changeSlide, 6000); // Change every 6 seconds
