@@ -14,7 +14,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
+    background: #a5a9bdec;
     backdrop-filter: blur(10px);
     padding-bottom: 15px;
     padding-left: 60px;
@@ -56,6 +56,7 @@ body {
     cursor: pointer;
     transition: 0.3s;
     border-radius: 0 0 15px 15px;
+    color: #1e3a8a;
 }
 
 .top-links button:hover {
@@ -63,6 +64,16 @@ body {
     color: white;
 }
 
+.bottom-links a {
+    color: white;
+    font-weight: 500;
+    text-decoration: underline;
+    transition: 0.3s ease;
+}
+
+.bottom-links a:hover {
+    color: #1e3a8a;
+}
 .search-btn {
     background: #1e3a8a;
     color: white;
@@ -234,6 +245,11 @@ body {
     background: #fff;
 }
 
+.news {
+    font-size: 36px;
+        color: #1e3a8a;
+        margin-bottom: 20px;
+}
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -266,37 +282,57 @@ body {
 
 /* ===== FOOTER ===== */
 .footer {
-    background: #1e3a8a;
+    background: #a5a9bd;
     color: white;
-    padding: 60px;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    /* Spread across row */
+    align-items: center;
+    /* Vertically aligned */
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-logo img {
+    width: 120px;
+}
+
+/* Keep in Touch in column */
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    /* Stack text vertically */
+    gap: 8px;
     text-align: center;
 }
 
-.footer .logo {
-    font-family: 'DM Serif Text', serif;
-    font-size: 28px;
+.footer-button .btn {
+    background: white;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.social-icons a {
     color: white;
-    margin-bottom: 15px;
-    display: block;
-}
-
-.footer h2 {
-    margin-bottom: 20px;
-}
-
-.footer .social-icons {
-    margin-bottom: 25px;
-}
-
-.footer .social-icons a {
-    color: white;
-    margin: 0 10px;
     font-size: 18px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
-.footer .social-icons a:hover {
-    color: #d1e0ff;
+.social-icons a:hover {
+    color: #00bcd4;
+    transform: translateY(-3px);
 }
 
 /* ===== RESPONSIVE ===== */
