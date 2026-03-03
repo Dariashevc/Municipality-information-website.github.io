@@ -4,35 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City</title>
-
-    <!-- Google Fonts -->
+    <title>City</title> <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=DM+Serif+Text&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome (Icons) -->
+        rel="stylesheet"> <!-- Font Awesome (Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <!-- Leaflet Map -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-    <!-- CSS -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!-- Leaflet Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> <!-- Your CSS -->
     <link rel="stylesheet" href="/src/css/home-page.css">
-
 </head>
 
-<body>
-
-    <!-- HEADER  -->
+<body> <!-- ===== HEADER ===== -->
     <header class="header">
-        <div class="header-container">
-            <a href="#" class="logo">City</a>
-
+        <div class="header-container"> <a href="#" class="logo">City</a>
             <nav class="nav">
                 <ul class="nav-links top-links">
                     <li><button class="nav-btn" data-modal="residents">Residents</button></li>
@@ -40,22 +26,17 @@
                     <li><button class="nav-btn" data-modal="business">Business</button></li>
                     <li><button class="nav-btn" data-modal="government">Government</button></li>
                 </ul>
-
                 <ul class="nav-links bottom-links">
                     <li><a href="#">About City</a></li>
                     <li><a href="#">News</a></li>
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Get involved</a></li>
                     <li><a href="#">Faq</a></li>
-                  <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Contact us</a></li>
                 </ul>
-            </nav>
-
-            <button class="search-btn">Search</button>
+            </nav> <button class="search-btn">Search</button>
         </div>
-    </header>
-
-    <!--  NAV MODALS  -->
+    </header> <!-- ===== NAV MODALS ===== -->
     <div class="nav-modal-container">
         <div class="nav-modal" id="residents">
             <div class="modal-left">
@@ -110,46 +91,34 @@
                 </ul>
             </div>
         </div>
-    </div>
-
-    <!-- ===== HERO ===== -->
+    </div> <!-- ===== HERO ===== -->
     <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active"> <img
+                    src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=2000" alt="City skyline">
+            </div>
+            <div class="slide"> <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2000"
+                    alt="Downtown city"> </div>
+            <div class="slide"> <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000"
+                    alt="Modern city buildings"> </div>
+        </div>
         <div class="hero-content">
-            <h1>Welcome to the City</h1>
-            <a href="#" class="btn-primary">Discover More</a>
+            <h1>Welcome to the City</h1> <a href="#" class="btn-primary">Discover More</a>
         </div>
-    </section>
-
-    <!-- ===== SERVICES ===== -->
-    <section class="services" data-aos="fade-up">
-        <ul class="service-list">
-            <li>Waste & Recycling</li>
-            <li>City Transit</li>
-            <li>Outdoor Facilities</li>
-            <li>Building Permits</li>
-        </ul>
-    </section>
-
-    <!-- ===== MAP ===== -->
-    <section class="city-map-section" data-aos="fade-up">
-        <div class="section-header">
-            <h2>City Discovery Map</h2>
-            <p>
-                Search for parks, recreational centres, cultural landmarks, and heritage sites,
-                all marked clearly for easy navigation. Discover city gems and plan your next
-                adventure with just a few clicks!
-            </p>
-
-            <a href="map.html" class="btn-primary">Explore the Map</a>
+    </section> <!-- ===== CITY DISCOVERY SECTION ===== -->
+    <section class="city-discovery-section" data-aos="fade-up">
+        <div class="discovery-container">
+            <div class="discovery-text">
+                <h2>City Discovery Map</h2>
+                <p> Search for parks, recreational centres, cultural landmarks, and heritage sites, all marked clearly
+                    for easy navigation. Discover city gems and plan your next adventure with just a few clicks! </p> <a
+                    href="map.html" class="btn-primary">Explore the Map</a>
+            </div>
+            <div class="discovery-image"> <img
+                    src="https://images.unsplash.com/photo-1502920917128-1aa500764b6c?q=80&w=2000" alt="City park">
+            </div>
         </div>
-
-        <div class="discovery-image">
-            <img src="https://images.unsplash.com/photo-1502920917128-1aa500764b6c?q=80&w=2000" alt="City park">
-        </div>
-        <div id="map"></div>
-    </section>
-
-    <!-- ===== NEWS ===== -->
+    </section> <!-- ===== NEWS ===== -->
     <section class="city-news-section" data-aos="fade-up">
         <div class="section-header">
             <h2 class="news">City News</h2>
@@ -172,42 +141,23 @@
                 <p>The city releases new plans to improve road safety and traffic flow.</p>
             </div>
         </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
+    </section> <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div>
-            <a href="#" class="logo">City</a>
+        <div class="footer-container"> <!-- Logo -->
+            <div class="footer-logo"> <a href="#" class="logo">City</a> </div> <!-- Keep in Touch -->
+            <div class="footer-contact">
+                <h3>Keep in Touch</h3>
+                <p>Email: info@city.com</p>
+                <p>Phone: +123 456 789</p> <!-- Social Icons -->
+                <div class="social-icons"> <a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i
+                            class="fab fa-instagram"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a
+                        href="#"><i class="fab fa-youtube"></i></a> </div>
+            </div> <!-- Button -->
+            <div class="footer-button"> <a href="#" class="btn">Contact Us</a> </div>
         </div>
-
-        <!-- Keep in Touch -->
-        <div class="footer-contact">
-            <h3>Keep in Touch</h3>
-            <p>Email: info@city.com</p>
-            <p>Phone: +123 456 789</p>
-
-            <!-- Social Icons -->
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-
-        <!-- Button -->
-        <div class="footer-button">
-            <a href="#" class="btn">Contact Us</a>
-        </div>
-
-    </div>
-</footer>
-
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-    <!-- Your JS -->
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script> <!-- Your JS -->
     <script src="/src/js/home-page.js"></script>
-
 </body>
 
 </html>

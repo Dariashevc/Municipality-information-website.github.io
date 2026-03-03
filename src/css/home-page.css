@@ -64,16 +64,10 @@ body {
     color: white;
 }
 
-.bottom-links a {
-    color: white;
-    font-weight: 500;
-    text-decoration: underline;
-    transition: 0.3s ease;
+.bottom-links {
+    text-decoration: none;
 }
 
-.bottom-links a:hover {
-    color: #1e3a8a;
-}
 .search-btn {
     background: #1e3a8a;
     color: white;
@@ -135,7 +129,6 @@ body {
     display: inline-block;
     margin-top: 30px;
 }
-
 
 /* ===== NAV MODAL ===== */
 .nav-modal-container {
@@ -247,9 +240,10 @@ body {
 
 .news {
     font-size: 36px;
-        color: #1e3a8a;
-        margin-bottom: 20px;
+    color: #1e3a8a;
+    margin-bottom: 20px;
 }
+
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -317,6 +311,7 @@ body {
     text-decoration: none;
     border-radius: 5px;
 }
+
 .social-icons {
     display: flex;
     gap: 15px;
