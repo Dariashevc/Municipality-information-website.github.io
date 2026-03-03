@@ -21,14 +21,14 @@
     <!-- Leaflet Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
-    <!-- Your CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="/src/css/home-page.css">
 
 </head>
 
 <body>
 
-    <!-- ===== HEADER ===== -->
+    <!-- HEADER  -->
     <header class="header">
         <div class="header-container">
             <a href="#" class="logo">City</a>
@@ -55,7 +55,7 @@
         </div>
     </header>
 
-    <!-- ===== NAV MODALS ===== -->
+    <!--  NAV MODALS  -->
     <div class="nav-modal-container">
         <div class="nav-modal" id="residents">
             <div class="modal-left">
@@ -112,31 +112,27 @@
         </div>
     </div>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-    <div class="hero-slider">
-        <div class="slide active">
-            <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=2000" alt="City skyline">
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the City</h1>
+            <a href="#" class="btn-primary">Discover More</a>
         </div>
-        <div class="slide">
-            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2000" alt="Downtown city">
-        </div>
-        <div class="slide">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000"
-                alt="Modern city buildings">
-        </div>
-    </div>
+    </section>
 
-    <div class="hero-content">
-        <h1>Welcome to the City</h1>
-        <a href="#" class="btn-primary">Discover More</a>
-    </div>
-</section>
-<!-- ===== CITY DISCOVERY SECTION ===== -->
-<section class="city-discovery-section" data-aos="fade-up">
-    <div class="discovery-container">
+    <!-- ===== SERVICES ===== -->
+    <section class="services" data-aos="fade-up">
+        <ul class="service-list">
+            <li>Waste & Recycling</li>
+            <li>City Transit</li>
+            <li>Outdoor Facilities</li>
+            <li>Building Permits</li>
+        </ul>
+    </section>
 
-        <div class="discovery-text">
+    <!-- ===== MAP ===== -->
+    <section class="city-map-section" data-aos="fade-up">
+        <div class="section-header">
             <h2>City Discovery Map</h2>
             <p>
                 Search for parks, recreational centres, cultural landmarks, and heritage sites,
@@ -150,9 +146,9 @@
         <div class="discovery-image">
             <img src="https://images.unsplash.com/photo-1502920917128-1aa500764b6c?q=80&w=2000" alt="City park">
         </div>
+        <div id="map"></div>
+    </section>
 
-    </div>
-</section>
     <!-- ===== NEWS ===== -->
     <section class="city-news-section" data-aos="fade-up">
         <div class="section-header">
@@ -179,11 +175,8 @@
     </section>
 
     <!-- ===== FOOTER ===== -->
-<footer class="footer">
-    <div class="footer-container">
-
-        <!-- Logo -->
-        <div class="footer-logo">
+    <footer class="footer">
+        <div>
             <a href="#" class="logo">City</a>
         </div>
 
