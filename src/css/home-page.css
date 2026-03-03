@@ -64,8 +64,15 @@ body {
     color: white;
 }
 
-.bottom-links {
-    text-decoration: none;
+.bottom-links a {
+    color: white;
+    font-weight: 500;
+    text-decoration: underline;
+    transition: 0.3s ease;
+}
+
+.bottom-links a:hover {
+    color: #1e3a8a;
 }
 
 .search-btn {
@@ -211,7 +218,7 @@ body {
 
 .discovery-image img {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     transition: 0.4s ease;
 }
@@ -241,10 +248,11 @@ body {
 .news {
     font-size: 36px;
     color: #1e3a8a;
-    margin-bottom: 20px;
+    text-decoration: none;
 }
 
 .news-grid {
+    margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
@@ -306,7 +314,7 @@ body {
 
 .footer-button .btn {
     background: white;
-    color: black;
+    color: #1e3a8a;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -326,7 +334,7 @@ body {
 }
 
 .social-icons a:hover {
-    color: #00bcd4;
+    color: #1e3a8a;
     transform: translateY(-3px);
 }
 
