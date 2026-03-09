@@ -13,7 +13,7 @@
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"> <!-- Leaflet Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> <!-- Your CSS -->
-    <link rel="stylesheet" href="/src/css/home-page.css">
+    <link rel="stylesheet" href="/src/css/contact-us.css">
 </head>
 
 <body> <!-- ===== HEADER ===== -->
@@ -92,6 +92,31 @@
             </div>
         </div>
     </div>
+
+    <div class="contact-container">
+    
+        <h1>Contact Us</h1>
+    
+        <form action="sendmail.php" method="POST">
+    
+            <label>Name</label>
+            <input type="text" name="name" required>
+    
+            <label>Email</label>
+            <input type="email" name="email" required>
+    
+            <label>Subject</label>
+            <input type="text" name="subject" required>
+    
+            <label>Message</label>
+            <textarea name="message" rows="5" required></textarea>
+    
+            <button type="submit">Send Message</button>
+    
+        </form>
+    
+    </div>
+
     </section> <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="footer-container"> <!-- Logo -->
