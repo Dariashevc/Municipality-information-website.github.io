@@ -8,3 +8,4 @@ to do list:
 - managing databases 
 - sign in?
 - search bar
+- advertising?
