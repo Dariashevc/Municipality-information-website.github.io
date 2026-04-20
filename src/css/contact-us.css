@@ -171,7 +171,7 @@ textarea {
     border-radius: 5px;
     resize: vertical;
     max-height: 300px;
-    min-height: 50npm install -g maildevpx;
+    min-height: 50px;
     overflow-y: auto;
 }
 
