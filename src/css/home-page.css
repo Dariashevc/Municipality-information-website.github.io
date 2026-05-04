@@ -108,7 +108,7 @@ body {
 
 .search-btn {
     background: var(--btn-bg);
-    color:  var(--primary);
+    color: var(--primary);
     padding: 10px 20px;
     border-radius: 20px;
     border: none;
@@ -124,7 +124,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color:  var(--surface);
+    color: var(--surface);
     font-size: 20px;
     text-align: center;
 }
@@ -273,7 +273,7 @@ body {
 /* ===== NEWS ===== */
 .city-news-section {
     padding: 80px 60px;
-    background:     var(--bg);
+    background: var(--bg);
 }
 
 .news {
@@ -340,8 +340,8 @@ body {
 }
 
 .footer-button .btn {
-    background: white;
-    color: #1e3a8a;
+    background: var(--surface);
+    color: var(--primary);
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
@@ -355,13 +355,13 @@ body {
 }
 
 .social-icons a {
-    color: white;
+    color: var(--surface);
     font-size: 18px;
     transition: 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #1e3a8a;
+    color: var(--primary);
     transform: translateY(-3px);
 }
 
