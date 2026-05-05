@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City</title> 
+    <title>City Discovery Map</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=DM+Serif+Text&display=swap"
-        rel="stylesheet"> 
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="/src/css/map.css">
 </head>
 
-<body> <!-- ===== HEADER ===== -->
+<body>
+
+    <!-- ===== HEADER ===== -->
     <header class="header">
-        <div class="header-container"> <a href="/src/index.html" class="logo">City</a>
-            <nav class="nav">
+        <div class="header-container">
+            <a href="/src/index.html" class="logo">City</a>
+
+            <nav class="nav" id="main-nav">
                 <ul class="nav-links top-links">
                     <li><button class="nav-btn" data-modal="residents">Residents</button></li>
                     <li><button class="nav-btn" data-modal="community">Community</button></li>
@@ -29,12 +35,24 @@
                     <li><a href="/src/html/news.html">News</a></li>
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Get involved</a></li>
-                    <li><a href="#">Faq</a></li>
+                    <li><a href="#">FAQ</a></li>
                     <li><a href="/src/html/contact-us.html">Contact us</a></li>
                 </ul>
-            </nav> <button class="search-btn">Search</button>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-    </header> <!-- ===== NAV MODALS ===== -->
+    </header>
+
+    <!-- ===== NAV MODALS ===== -->
     <div class="nav-modal-container">
         <div class="nav-modal" id="residents">
             <div class="modal-left">
@@ -90,23 +108,97 @@
             </div>
         </div>
     </div>
-    </section> <!-- ===== FOOTER ===== -->
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="/src/html/about-city.html">About City</a></li>
+            <li><a href="/src/html/news.html">News</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Get Involved</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="/src/html/contact-us.html">Contact Us</a></li>
+        </ul>
+        <div class="mobile-categories">
+            <a href="#">Residents</a>
+            <a href="#">Community</a>
+            <a href="#">Business</a>
+            <a href="#">Government</a>
+        </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="map-hero">
+        <div class="map-hero-content" data-aos="fade-up">
+            <h1>City Discovery Map</h1>
+            <p>Explore parks, recreation centres, landmarks, and city services near you.</p>
+        </div>
+    </section>
+
+    <!-- ===== MAP SECTION ===== -->
+    <section class="map-section">
+
+        <!-- Filter buttons -->
+        <div class="map-filters" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">
+                <i class="fa-solid fa-layer-group"></i> All
+            </button>
+            <button class="filter-btn" data-filter="park">
+                <i class="fa-solid fa-tree"></i> Parks
+            </button>
+            <button class="filter-btn" data-filter="recreation">
+                <i class="fa-solid fa-dumbbell"></i> Recreation
+            </button>
+            <button class="filter-btn" data-filter="landmark">
+                <i class="fa-solid fa-landmark"></i> Landmarks
+            </button>
+            <button class="filter-btn" data-filter="service">
+                <i class="fa-solid fa-building-columns"></i> City Services
+            </button>
+        </div>
+
+        <!-- Map + sidebar layout -->
+        <div class="map-layout">
+
+            <!-- Sidebar -->
+            <div class="map-sidebar">
+                <h3>Locations</h3>
+                <div class="location-list" id="location-list"></div>
+            </div>
+
+            <!-- Map -->
+            <div id="map"></div>
+
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="footer-container"> 
-            <div class="footer-logo"> <a href="/src/index.html" class="logo">City</a> </div> <!-- Keep in Touch -->
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="/src/index.html" class="logo">City</a>
+            </div>
             <div class="footer-contact">
                 <h3>Keep in Touch</h3>
                 <p>Email: info@city.com</p>
-                <p>Phone: +123 456 789</p> 
-                <div class="social-icons"> <a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i
-                            class="fab fa-instagram"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a
-                        href="#"><i class="fab fa-youtube"></i></a> </div>
+                <p>Phone: +123 456 789</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
             </div>
-            <div class="footer-button"> <a href="/src/html/contact-us.html" class="btn">Contact Us</a> </div>
+            <div class="footer-button">
+                <a href="/src/html/contact-us.html" class="btn">Contact Us</a>
+            </div>
         </div>
     </footer>
+
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="/src/js/home-page.js"></script>
+    <script src="/src/js/map.js"></script>
 </body>
 
 </html>

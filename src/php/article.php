@@ -101,48 +101,44 @@
         </div>
     </div>
 
-    <!-- ===== HERO ===== -->
-    <section class="news-hero">
-        <div class="news-hero-content" data-aos="fade-up">
-            <h1>City News</h1>
-            <p>Stay up to date with the latest announcements, events, and stories from your city.</p>
+    <?php
+    // ===== LOAD ARTICLE =====
+    $id = preg_replace('/[^a-zA-Z0-9_-]/', '', $_GET['id'] ?? '');
+    $file = __DIR__ . '/articles/' . $id . '.php';
+
+    if (empty($id) || !file_exists($file)) {
+        // Article not found
+        echo '
+        <section class="article-not-found">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <h2>Article Not Found</h2>
+            <p>The article you are looking for does not exist.</p>
+            <a href="/src/php/news.php" class="btn-primary">← Back to News</a>
+        </section>';
+    } else {
+        include $file;
+    ?>
+
+    <!-- ===== ARTICLE HERO ===== -->
+    <section class="article-hero" style="background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('<?= htmlspecialchars($image) ?>')">
+        <div class="article-hero-content" data-aos="fade-up">
+            <span class="article-tag"><?= htmlspecialchars($category) ?></span>
+            <h1><?= htmlspecialchars($title) ?></h1>
+            <p class="article-date"><i class="fa-regular fa-calendar"></i> <?= htmlspecialchars($date) ?></p>
         </div>
     </section>
 
-    <!-- ===== NEWS GRID ===== -->
-    <section class="news-section">
-        <div class="news-grid" data-aos="fade-up">
-            <?php
-            $articles_dir = __DIR__ . '/articles/';
-            $files = glob($articles_dir . '*.php');
-
-            // Sort newest first (by filename descending)
-            rsort($files);
-
-            foreach ($files as $file) {
-                // Load article variables
-                include $file;
-                $id = basename($file, '.php');
-                ?>
-                <article class="news-card">
-                    <a href="/src/php/article.php?id=<?= htmlspecialchars($id) ?>" class="news-card-link">
-                        <div class="news-card-img">
-                            <img src="<?= htmlspecialchars($image) ?>" alt="<?= htmlspecialchars($title) ?>">
-                            <span class="news-card-tag"><?= htmlspecialchars($category) ?></span>
-                        </div>
-                        <div class="news-card-body">
-                            <p class="news-card-date"><i class="fa-regular fa-calendar"></i> <?= htmlspecialchars($date) ?></p>
-                            <h2><?= htmlspecialchars($title) ?></h2>
-                            <p class="news-card-summary"><?= htmlspecialchars($summary) ?></p>
-                            <span class="read-more">Read more →</span>
-                        </div>
-                    </a>
-                </article>
-                <?php
-            }
-            ?>
+    <!-- ===== ARTICLE BODY ===== -->
+    <section class="article-section">
+        <div class="article-container" data-aos="fade-up">
+            <a href="/src/php/news.php" class="back-link">← Back to News</a>
+            <div class="article-body">
+                <?= $content ?>
+            </div>
         </div>
     </section>
+
+    <?php } ?>
 
     <!-- ===== FOOTER ===== -->
     <footer class="footer">

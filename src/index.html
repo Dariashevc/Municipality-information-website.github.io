@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City</title> 
+    <title>City</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=DM+Serif+Text&display=swap"
-        rel="stylesheet"> 
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/css/home-page.css">
 </head>
 
-<body> <!-- ===== HEADER ===== -->
+<body>
+
+    <!-- ===== HEADER ===== -->
     <header class="header">
-        <div class="header-container"> <a href="/src/index.html" class="logo">City</a>
-            <nav class="nav">
+        <div class="header-container">
+            <a href="/src/index.html" class="logo">City</a>
+
+            <nav class="nav" id="main-nav">
                 <ul class="nav-links top-links">
                     <li><button class="nav-btn" data-modal="residents">Residents</button></li>
                     <li><button class="nav-btn" data-modal="community">Community</button></li>
@@ -26,15 +30,27 @@
                 </ul>
                 <ul class="nav-links bottom-links">
                     <li><a href="/src/html/about-city.html">About City</a></li>
-                    <li><a href="/src/html/news.html">News</a></li>
+                    <li><a href="/src/php/news.php">News</a></li>
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Get involved</a></li>
-                    <li><a href="#">Faq</a></li>
+                    <li><a href="#">FAQ</a></li>
                     <li><a href="/src/html/contact-us.html">Contact us</a></li>
                 </ul>
-            </nav> <button class="search-btn">Search</button>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-    </header> <!-- ===== NAV MODALS ===== -->
+    </header>
+
+    <!-- ===== NAV MODALS ===== -->
     <div class="nav-modal-container">
         <div class="nav-modal" id="residents">
             <div class="modal-left">
@@ -89,72 +105,154 @@
                 </ul>
             </div>
         </div>
-    </div> <!-- ===== HERO ===== -->
+    </div>
+
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="/src/html/about-city.html">About City</a></li>
+            <li><a href="/src/html/news.html">News</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Get Involved</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="/src/html/contact-us.html">Contact Us</a></li>
+        </ul>
+        <div class="mobile-categories">
+            <a href="#">Residents</a>
+            <a href="#">Community</a>
+            <a href="#">Business</a>
+            <a href="#">Government</a>
+        </div>
+    </div>
+
+    <!-- ===== HERO SLIDER ===== -->
     <section class="hero">
         <div class="hero-slider">
-            <div class="slide active"> <img
-                    src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?q=80&w=2000" alt="City skyline">
+            <div class="slide active">
+                <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1600&q=80"
+                    alt="City skyline">
             </div>
-            <div class="slide"> <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2000"
-                    alt="Downtown city"> </div>
-            <div class="slide"> <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=2000"
-                    alt="Modern city buildings"> </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1600&q=80"
+                    alt="City park">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1600&q=80"
+                    alt="City heritage">
+            </div>
         </div>
-        <div class="hero-content">
-            <h1>Welcome to the City</h1> <a href="./html/about-city.html" class="btn-primary">Discover More</a>
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Welcome to <span>City</span></h1>
+            <p>A place where community, culture, and progress come together.</p>
+            <a href="/src/html/about-city.html" class="btn-primary">Discover More</a>
         </div>
-    </section> <!-- ===== CITY DISCOVERY SECTION ===== -->
-    <section class="city-discovery-section" data-aos="fade-up">
-        <div class="discovery-container">
+        <div class="slide-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </section>
+
+    <!-- ===== CITY DISCOVERY ===== -->
+    <section class="city-discovery-section">
+        <div class="discovery-container" data-aos="fade-up">
             <div class="discovery-text">
-                <h2>City Discovery Map</h2>
-                <p> Search for parks, recreational centres, cultural landmarks, and heritage sites, all marked clearly
-                    for easy navigation. Discover city gems and plan your next adventure with just a few clicks! </p> <a
-                    href="/src/html/map.html" class="btn-primary">Explore the Map</a>
+                <h2>Discover Your City</h2>
+                <p>From scenic parks to bustling cultural districts, our city has something for everyone. Explore the
+                    map, find local events, and make the most of everything City has to offer.</p>
+                <a href="/src/html/map.html" class="btn-primary">Explore the Map</a>
             </div>
-            <div class="discovery-image"> <img
-                    src="https://images.pexels.com/photos/415722/pexels-photo-415722.jpeg" alt="City park">
-            </div>
-        </div>
-    </section> <!-- ===== NEWS ===== -->
-    <section class="city-news-section" data-aos="fade-up">
-        <div class="section-header">
-            <h2><a href="/src/html/news.html" class="news">City News</a></h2>
-        </div>
-        <div class="news-grid">
-            <div class="news-card">
-                <h3>New Park Opening</h3>
-                <p>The city announces a new park for families to enjoy recreational activities.</p>
-            </div>
-            <div class="news-card">
-                <h3>Transit Updates</h3>
-                <p>New transit routes launching next month for smoother city commute.</p>
-            </div>
-            <div class="news-card">
-                <h3>Community Event</h3>
-                <p>Annual community festival will be held downtown this weekend.</p>
-            </div>
-            <div class="news-card">
-                <h3>Infrastructure Plan</h3>
-                <p>The city releases new plans to improve road safety and traffic flow.</p>
+            <div class="discovery-image">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80"
+                    alt="City discovery">
             </div>
         </div>
-    </section> <!-- ===== FOOTER ===== -->
+    </section>
+
+    <!-- ===== NEWS ===== -->
+    <section class="city-news-section">
+        <div data-aos="fade-up">
+            <a href="/src/php/news.php" class="news">Latest News →</a>
+            <div class="news-grid">
+                <div class="news-card">
+                    <span class="news-tag">Community</span>
+                    <h3>New Community Centre Opens Downtown</h3>
+                    <p>The newly built community centre now offers fitness facilities, event spaces, and programming for
+                        all ages.</p>
+                    <a href="/src/php/article.php?id=001" class="read-more">Read more →</a>
+                </div>
+                <div class="news-card">
+                    <span class="news-tag">Infrastructure</span>
+                    <h3>Road Renewal Project Begins This Spring</h3>
+                    <p>City crews will begin major road upgrades across several key corridors starting next month.</p>
+                    <a href="/src/php/article.php?id=002" class="read-more">Read more →</a>
+                </div>
+                <div class="news-card">
+                    <span class="news-tag">Events</span>
+                    <h3>Annual Summer Festival Returns in July</h3>
+                    <p>Join thousands of residents for live music, local vendors, and family-friendly activities at the
+                        waterfront.</p>
+                    <a href="/src/php/article.php?id=003" class="read-more">Read more →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== QUICK LINKS ===== -->
+    <section class="quick-links-section" data-aos="fade-up">
+        <h2>City Services</h2>
+        <div class="quick-links-grid">
+            <a href="#" class="quick-link-card">
+                <i class="fa-solid fa-calendar"></i>
+                <span>Events & Activities</span>
+            </a>
+            <a href="#" class="quick-link-card">
+                <i class="fa-solid fa-tree"></i>
+                <span>Parks & Recreation</span>
+            </a>
+            <a href="#" class="quick-link-card">
+                <i class="fa-solid fa-leaf"></i>
+                <span>Sustainability</span>
+            </a>
+            <a href="#" class="quick-link-card">
+                <i class="fa-solid fa-gavel"></i>
+                <span>Policies & Bylaws</span>
+            </a>
+            <a href="#" class="quick-link-card">
+                <i class="fa-solid fa-briefcase"></i>
+                <span>Business Resources</span>
+            </a>
+            <a href="#" class="quick-link-card">
+                <i class="fa-solid fa-handshake"></i>
+                <span>Citizen Services</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="footer-container"> 
-            <div class="footer-logo"> <a href="/src/index.html" class="logo">City</a> </div> <!-- Keep in Touch -->
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="/src/index.html" class="logo">City</a>
+            </div>
             <div class="footer-contact">
                 <h3>Keep in Touch</h3>
                 <p>Email: info@city.com</p>
-                <p>Phone: +123 456 789</p> 
-                <div class="social-icons"> <a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i
-                            class="fab fa-instagram"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a
-                        href="#"><i class="fab fa-youtube"></i></a> </div>
-            </div> 
-            <div class="footer-button"> <a href="/src/html/contact-us.html" class="btn">Contact Us</a> </div>
+                <p>Phone: +123 456 789</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-button">
+                <a href="/src/html/contact-us.html" class="btn">Contact Us</a>
+            </div>
         </div>
     </footer>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script> 
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="/src/js/home-page.js"></script>
 </body>
 

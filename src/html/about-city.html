@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City</title> 
+    <title>About City</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=DM+Serif+Text&display=swap"
-        rel="stylesheet"> 
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/css/about-city.css">
 </head>
 
-<body> <!-- ===== HEADER ===== -->
+<body>
+
+    <!-- ===== HEADER ===== -->
     <header class="header">
-        <div class="header-container"> <a href="/src/index.html" class="logo">City</a>
-            <nav class="nav">
+        <div class="header-container">
+            <a href="/src/index.html" class="logo">City</a>
+
+            <nav class="nav" id="main-nav">
                 <ul class="nav-links top-links">
                     <li><button class="nav-btn" data-modal="residents">Residents</button></li>
                     <li><button class="nav-btn" data-modal="community">Community</button></li>
@@ -29,12 +33,24 @@
                     <li><a href="/src/html/news.html">News</a></li>
                     <li><a href="#">Careers</a></li>
                     <li><a href="#">Get involved</a></li>
-                    <li><a href="#">Faq</a></li>
+                    <li><a href="#">FAQ</a></li>
                     <li><a href="/src/html/contact-us.html">Contact us</a></li>
                 </ul>
-            </nav> <button class="search-btn">Search</button>
+            </nav>
+
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-    </header> <!-- ===== NAV MODALS ===== -->
+    </header>
+
+    <!-- ===== NAV MODALS ===== -->
     <div class="nav-modal-container">
         <div class="nav-modal" id="residents">
             <div class="modal-left">
@@ -89,63 +105,112 @@
                 </ul>
             </div>
         </div>
-    </div> 
+    </div>
 
-    <!-- HERO SECTION -->
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="/src/html/about-city.html">About City</a></li>
+            <li><a href="/src/html/news.html">News</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Get Involved</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="/src/html/contact-us.html">Contact Us</a></li>
+        </ul>
+        <div class="mobile-categories">
+            <a href="#">Residents</a>
+            <a href="#">Community</a>
+            <a href="#">Business</a>
+            <a href="#">Government</a>
+        </div>
+    </div>
+
+    <!-- ===== HERO ===== -->
     <section class="about-hero">
-        <h1>About City</h1>
-    </section>
-    
-    <!-- SECTION 1 -->
-    <section class="section">
-        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156" alt="City Park">
-        <div class="section-content">
-            <h2>A City Rich in Nature</h2>
-            <p>Our city is known for its beautiful parks, scenic walking trails, and vibrant green spaces. Residents and
-                visitors enjoy peaceful outdoor environments perfect for relaxation and recreation.</p>
-            <p>From morning jogs to family picnics, nature is at the heart of everyday life here.</p>
-        </div>
-    </section>
-    
-    <!-- SECTION 2 -->
-    <section class="section alt">
-        <div class="section-content">
-            <h2>Heritage & Culture</h2>
-            <p>Steeped in history, our city proudly preserves its cultural landmarks and architectural heritage. Historic
-                buildings stand alongside modern developments, creating a unique and inspiring cityscape.</p>
-            <p>Community festivals, art exhibitions, and cultural events bring people together and celebrate our shared
-                identity.</p>
-        </div>
-        <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b" alt="Historic Building">
-    </section>
-    
-    <!-- SECTION 3 -->
-    <section class="section">
-        <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b" alt="City Skyline">
-        <div class="section-content">
-            <h2>Growth & Innovation</h2>
-            <p>While honoring its past, the city continues to invest in smart infrastructure, sustainability, and economic
-                growth. Innovation and progress shape the future for generations to come.</p>
-            <p>We are committed to building safe, inclusive neighborhoods and creating opportunities for everyone.</p>
+        <div class="about-hero-content" data-aos="fade-up">
+            <h1>About City</h1>
+            <p>Learn about our history, our people, and the vision shaping our future.</p>
         </div>
     </section>
 
-    </section> <!-- ===== FOOTER ===== -->
+    <!-- ===== SECTION 1 ===== -->
+    <section class="about-section" data-aos="fade-up">
+        <div class="about-section-inner">
+            <div class="about-img-wrap">
+                <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80"
+                    alt="City Park">
+            </div>
+            <div class="about-content">
+                <span class="about-label">Nature</span>
+                <h2>A City Rich in Nature</h2>
+                <p>Our city is known for its beautiful parks, scenic walking trails, and vibrant green spaces. Residents
+                    and visitors enjoy peaceful outdoor environments perfect for relaxation and recreation.</p>
+                <p>From morning jogs to family picnics, nature is at the heart of everyday life here.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 2 ===== -->
+    <section class="about-section alt" data-aos="fade-up">
+        <div class="about-section-inner reverse">
+            <div class="about-img-wrap">
+                <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=900&q=80"
+                    alt="Historic Building">
+            </div>
+            <div class="about-content">
+                <span class="about-label">Heritage</span>
+                <h2>Heritage & Culture</h2>
+                <p>Steeped in history, our city proudly preserves its cultural landmarks and architectural heritage.
+                    Historic buildings stand alongside modern developments, creating a unique and inspiring cityscape.
+                </p>
+                <p>Community festivals, art exhibitions, and cultural events bring people together and celebrate our
+                    shared identity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SECTION 3 ===== -->
+    <section class="about-section" data-aos="fade-up">
+        <div class="about-section-inner">
+            <div class="about-img-wrap">
+                <img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=900&q=80"
+                    alt="City Skyline">
+            </div>
+            <div class="about-content">
+                <span class="about-label">Innovation</span>
+                <h2>Growth & Innovation</h2>
+                <p>While honoring its past, the city continues to invest in smart infrastructure, sustainability, and
+                    economic growth. Innovation and progress shape the future for generations to come.</p>
+                <p>We are committed to building safe, inclusive neighborhoods and creating opportunities for everyone.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
-        <div class="footer-container"> 
-            <div class="footer-logo"> <a href="/src/index.html" class="logo">City</a> </div> <!-- Keep in Touch -->
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="/src/index.html" class="logo">City</a>
+            </div>
             <div class="footer-contact">
                 <h3>Keep in Touch</h3>
                 <p>Email: info@city.com</p>
-                <p>Phone: +123 456 789</p> 
-                <div class="social-icons"> <a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i
-                            class="fab fa-instagram"></i></a> <a href="#"><i class="fab fa-twitter"></i></a> <a
-                        href="#"><i class="fab fa-youtube"></i></a> </div>
-            </div> 
-            <div class="footer-button"> <a href="/src/html/contact-us.html" class="btn">Contact Us</a> </div>
+                <p>Phone: +123 456 789</p>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-button">
+                <a href="/src/html/contact-us.html" class="btn">Contact Us</a>
+            </div>
         </div>
     </footer>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script> 
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="/src/js/home-page.js"></script>
 </body>
 
