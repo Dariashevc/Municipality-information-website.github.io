@@ -38,7 +38,6 @@
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
                     <i class="fa-solid fa-moon" id="theme-icon"></i>
                 </button>
-                <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
                 <button class="hamburger" id="hamburger" aria-label="Open menu">
                     <span></span><span></span><span></span>
                 </button>
